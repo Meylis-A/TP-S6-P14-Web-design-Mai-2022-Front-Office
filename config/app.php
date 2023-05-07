@@ -54,7 +54,7 @@ return [
 
     'url' => env('APP_URL', 'https://laravel-production-5422.up.railway.app'),
 
-    'asset_url' => env('ASSET_URL', null),
+    'asset_url' => env('ASSET_URL', 'https://laravel-production-5422.up.railway.app'),
 
     /*
     |--------------------------------------------------------------------------

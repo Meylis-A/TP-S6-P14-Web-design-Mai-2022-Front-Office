@@ -11,7 +11,7 @@ class CacheMiddleware
         $response = $next($request);
 
         // Vérifiez si la requête concerne une ressource statique
-        if ($response->isSuccessful() && $response->isFile()) {
+        if ($response->isSuccessful() && $response->isFresh()) {
             $maxAge = 86400; // Durée maximale de mise en cache en secondes (ici, 1 jour)
             
             $response->header('Cache-Control', 'public, max-age=' . $maxAge);

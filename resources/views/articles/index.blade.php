@@ -13,7 +13,6 @@
     <meta name="language" content="fr">
     <meta name="author" content="meylis1747">
 
-    @cache('linkSc', 5)
 
     <!-- Favicons -->
     <link href="{{asset('img/favicon.png') }}" rel="icon">
@@ -32,7 +31,6 @@
     <!-- Template Main CSS File -->
     <link href="{{asset('css/style.css') }}" rel="stylesheet">
 
-    @endcache
 
 </head>
 
@@ -149,8 +147,6 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    @cache('linkSc', 5)
-
     <!-- Vendor JS Files -->
     <script src="{{ asset('vendor/aos/aos.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -159,7 +155,7 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('js/main.js') }}"></script>
-    @endcache
+
 </body>
 
 </html>

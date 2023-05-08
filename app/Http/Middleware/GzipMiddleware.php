@@ -10,7 +10,7 @@ class GzipMiddleware
     {
         $response = $next($request);
 
-        if ($response->isSuccessful() && $response->isText()) {
+        if ($response->isSuccessful() && $response->statusText()) {
             $content = gzencode($response->getContent(), 9);
 
             $response->header('Content-Encoding', 'gzip');

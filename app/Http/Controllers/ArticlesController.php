@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Softland;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
 class ArticlesController extends Controller
@@ -18,8 +18,13 @@ class ArticlesController extends Controller
 
     public function blog_post()
     {
-        $articles = Article::all();
-        $softland = Softland::all()->first();
+        $articles = Cache::remember('blig-list', 5, function () {
+            return Article::all();
+        });
+        $softland = Cache::remember('softlands', 5, function () {
+            return Softland::all()->first();
+        });
+        
         foreach ($articles as $elem) {
             $lien_convivial = Str::slug($elem->titre . '-' . $elem->resume, '-');            
             

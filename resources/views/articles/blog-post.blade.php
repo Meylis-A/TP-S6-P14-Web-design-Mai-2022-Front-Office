@@ -13,6 +13,8 @@
     <meta name="language" content="fr">
     <meta name="author" content="meylis1747">
 
+    @cache('linkscript', 5)
+
     <!-- Favicons -->
     <link href="{{asset('img/favicon.png') }}" rel="icon">
     <link href="{{asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
@@ -30,13 +32,8 @@
     <!-- Template Main CSS File -->
     <link href="{{asset('css/style.css') }}" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: SoftLand
-  * Updated: Mar 10 2023 with Bootstrap v5.2.3
-  * Template URL: https://bootstrapmade.com/softland-bootstrap-app-landing-page-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    @endcache
+
 </head>
 
 <body>
@@ -97,6 +94,7 @@
             @section('content')
             <div class="container">
                 <div class="row mb-5">
+                @cache('liste_cachee', 1440)
                     @foreach ($articles as $article)
                     <div class="col-md-4">
                         <div class="post-entry">
@@ -113,6 +111,7 @@
                         </div>
                     </div>
                     @endforeach
+                @endcache
                 </div>
             </div>
         </section>
@@ -173,7 +172,7 @@
     </footer>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+    @cache('linkSc', 5)
     <!-- Vendor JS Files -->
     <script src="{{asset('vendor/aos/aos.js') }}"></script>
     <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -182,7 +181,7 @@
 
     <!-- Template Main JS File -->
     <script src="{{asset('js/main.js') }}"></script>
-
+    @endcache
 </body>
 
 </html>

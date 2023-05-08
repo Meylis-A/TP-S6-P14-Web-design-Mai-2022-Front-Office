@@ -23,6 +23,8 @@ class ArticlesController extends Controller
         foreach ($articles as $elem) {
             $lien_convivial = Str::slug($elem->titre . '-' . $elem->resume, '-');            
             
+            $filename = $elem->image;
+
             $parts = explode('.', $filename);
             
             // obtention du format de l'image
